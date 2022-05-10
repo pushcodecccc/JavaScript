@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 改变函数内 this 指向 js提供了三种方法 call() apply() bind()
+
+        // 1.call()的运用
+        // var o = {
+        //     name: 'zxc'
+        // };
+
+        // function fn(a, b) {
+        //     console.log(this);
+        // }
+        // fn.call(o)
+
+        // //call 第一个可以调用函数 第二个可以改变函数内部的this 指向
+        // //call 的主要作用可以实现继承
+        // function father(name, age, sex) {
+        //     this.name = name;
+        //     this.age = age;
+        //     this.sex = sex
+        // }
+
+        // function son(name, age, sex) {
+        //     father.call(this, name, age, sex);
+        // }
+        // var sons = new son('李登辉', 18, '男');
+        // console.log(sons);
+
+
+
+
+
+        // 2.apply()的应用
+        var z = {
+            name: 'hello'
+        };
+
+        function fn(arr) {
+            console.log(this);
+            console.log(arr);
+        }
+        fn.apply(z, [123])
+            //1.也是调用函数  第二个可以改变函数内部的参数内部的this指向
+            //2.但是他的参数必须是以数组的形式(伪数组)
+    </script>
+</body>
+
+</html>

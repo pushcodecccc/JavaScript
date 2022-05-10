@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script type="module">
+    // 通用的导入方式
+    //引入min.js 模块内容
+    // import * as min from "./min.js";
+    // console.log(min);
+    // // 引入min2.js模块内容
+    // import * as min2 from "./min2.js";
+    // console.log(min2);
+    // // 引入min23.js模块内容
+    // import * as min3 from "./min3.js";
+    // // console.log(min3);
+    // min3.default.say()
+
+    // 2.解析赋值形式
+    // import { name, fn } from "./min.js";
+    // console.log(name);
+    // console.log(fn); 
+
+
+    // 3.简变形式只针对默认暴露
+    import min3 from "./min3.js";
+    console.log(min3);
+
+  </script>
+</body>
+
+</html>

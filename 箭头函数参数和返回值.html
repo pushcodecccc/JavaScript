@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 参数问题
+    // 放两个参数
+    // const sum = (sum1, sum2) => {
+    //   return sum1 + sum2
+    // }
+    // console.log(sum(1, 2));
+    // // 放入一个参数可以省掉括号
+
+
+    // //不需要返回值的写法一行显示
+    // const fn = num => (num * num)
+    // console.log(fn(2));
+
+
+    // const power = () => console.log('nhao');
+    // console.log(power());
+
+
+
+    // 问题:箭头函数中的 this是如何查找的
+    // 向外层作用域中,一层层查找this，直到有this的定义
+    // const obj = {
+    //   aaa() {
+    //     setTimeout(function () {
+    //       console.log(this);
+
+    //     })
+    //   },
+    //   say: () => {
+    //     console.log(this);
+    //   }
+
+
+    // }
+    // obj.aaa()
+    // obj.say()
+
+
+
+    // 最后一个为箭头函数
+    const obj = {
+      aaa() {
+        setTimeout(function () {
+          setTimeout(function () {
+            console.log(this);//widow
+          })
+          setTimeout(() => {
+            console.log(this);//widow
+          })
+        })
+
+        setTimeout(() => {
+          setTimeout(function () {
+            console.log(this);//widow
+          })
+          setTimeout(() => {
+            console.log(this);//obj
+          })
+        })
+      }
+    }
+    obj.aaa()
+
+
+  </script>
+</body>
+
+</html>

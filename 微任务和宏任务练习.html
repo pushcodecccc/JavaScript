@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    console.log(1) // 同步
+    setTimeout(() => {
+      console.log(2) // 异步：宏任务 setTimeout1
+      Promise.resolve().then(() => { // 异步：微任务 then1
+        console.log(3)
+      })
+    });
+    console.log(4) // 同步
+    new Promise((resolve, reject) => {
+      console.log(5) // 同步
+      resolve()
+    }).then(() => { // 异步：微任务 then2
+      console.log(6)
+      setTimeout(() => {
+        console.log(7) // 异步：宏任务 setTimeout2s
+      })
+    })
+    console.log(8) // 同步
+
+
+  </script>
+</body>
+
+</html>

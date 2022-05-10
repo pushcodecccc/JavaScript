@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //prototype 是共享对象的方法,也称为原型对象
+
+        function Start(name, age) {
+            this.name = name;
+            this.age = age;
+            this.sing = function() {
+                console.log('唱歌');
+            }
+        }
+        // Start.prototype.sing = function() {
+        //     console.log('唱歌');
+        // }
+
+        const ldh = new Start('刘德华', 18)
+        const zxy = new Start('张学友', 19)
+        console.log(ldh.sing == zxy.sing);
+        // console.log(ldh);
+    </script>
+</body>
+
+</html>

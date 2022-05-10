@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul class="nav">
+        <li>123</li>
+        <li>123</li>
+        <li>345</li>
+        <li>123</li>
+    </ul>
+    <script>
+        var lis = document.querySelector('.nav').querySelectorAll('li');
+        //常规写法得不到索引号
+        // for (var i = 0; i < lis.length; i++) {
+        //     lis[i].onclick = function() {
+        //         console.log(i);
+        //     }
+        // }
+
+        //利闭包的方式得到当前的小li 的索引号
+        for (var i = 0; i < lis.length; i++) {
+            //立即执行函数也称为小闭包因为 立即执行函数里面的任何一个函数 都可以 使用它的变量i
+            (function (i) {
+                lis[i].onclick = function () {
+                    console.log(i);
+                    //里面打印的i 是使用外面的i 所以产生了闭包
+                }
+            })(i);
+        }
+    </script>
+</body>
+
+</html>

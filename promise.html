@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- promise的三种状态pending,fulfilled,rejected -->
+  <script>
+    // resolve,reject,throw
+    // const p = new Promise((resolve, reject) => {
+    //   // resolve(1);
+    //   reject(1)
+
+    // })
+    // console.log(p);
+
+
+    //then,catch方法
+    // new Promise((resolve, reject) => {
+    //   resolve(100);//成功会调用then方法
+    //   reject(1111);//失败会调用catch方法
+    // }).then(res => console.log('成功', res))
+    //   .catch(err => console.log('失败', err))
+    //   .finally(() => console.log('哈哈哈哈'))//不管成功和失败都会调用finally这个方法
+
+
+    new Promise((resolve, reject) => {
+      resolve(100);//成功会调用then方法
+      // reject(1111);//失败会调用catch方法
+    }).then(res => res)
+      .then(res => console.log('第二个then方法', res))
+
+  </script>
+</body>
+
+</html>

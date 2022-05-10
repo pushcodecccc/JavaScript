@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //边界符 ^ $
+        var rg = /1 23/; //正则表达式里面不需要加引号 不管是数字型还是字符串型
+        // /abc/ 只要包含有abc这个字符串返回都是true
+        console.log(rg.test('123'));
+        console.log(rg.test('1233'));
+        console.log(rg.test('11233'));
+        console.log('---------------------------------------');
+        var reg = /^123/; //必须以123开头
+        console.log(reg.test('123')); //true
+        console.log(reg.test('1233')); //true
+        console.log(reg.test('11233')); //false
+
+
+
+        console.log('---------------------------------------');
+        var reg1 = /^123$/; //精确匹配要求123字符串才符合规范
+        console.log(reg1.test('123')); //true
+        console.log(reg1.test('1233')); //false
+        console.log(reg1.test('11233')); //false
+    </script>
+</body>
+
+</html>

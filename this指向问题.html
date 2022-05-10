@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<button> 按钮</button>
+
+<body>
+    <script>
+        // 1.普通函数 this指向window
+        // function fn() {
+        //     console.log(this);
+        // }
+        // fn()
+
+
+        // 2.对象的方法  this指向的对象是o
+        // var o = {
+        //     say: function() {
+        //         console.log(this);
+        //     }
+        // }
+        // o.say();
+
+
+
+        // 3.构造函数 this 指向ldh这个实例对象 原型对象里面的this 指向的也是ldh 这个实例对象
+        // function start() {}
+        // start.prototype.sing = function() {}
+        // var ldh = new start();
+        // console.log(ldh);
+
+
+
+        // 4.绑定事件   this指向的是函数的调用者 btn 这个对象
+        // var btn = document.querySelector('button')
+        // btn.addEventListener('click', function() {
+        //     console.log(this);
+        // })
+
+
+        //定时器函数 的this 指向的也是window
+        // setTimeout(function() {
+        //     console.log(this);
+        // }, 2000)
+
+
+
+        // 立即执行函数 this还是指向window
+        (function() {
+            console.log(this);
+        })();
+    </script>
+</body>
+
+</html>

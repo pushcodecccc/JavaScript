@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>点击</button>
+    <script>
+        var that;
+        var _that;
+        class start {
+            constructor(uname, age) {
+                //constructor 里面的this 指向的是 创建的实例对象
+                that = this;
+                this.uname = uname;
+                this.age = age;
+                // this.sing();
+                this.btn = document.querySelector('button');
+                this.btn.onclick = this.sing;
+            }
+            sing() {
+                //这个sing  方法里面的this 指向的是btn 这个按钮，因为 这个按钮调用了这个函数
+                console.log(this);
+                console.log(that.uname); //that里面存储的是constructor里面的this
+            }
+            dance() {
+                //这个dance里面的this 指向的是实例对象 ldh 因为ldh 调用了这个函数
+                _that = this;
+                console.log(this);
+            }
+        }
+        var ldh = new start('刘德华');
+        console.log(that == ldh);
+        ldh.dance();
+        console.log(_that === ldh);
+    </script>
+</body>
+
+</html>
